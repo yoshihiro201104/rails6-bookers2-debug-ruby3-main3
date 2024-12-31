@@ -9,9 +9,6 @@
     <div class='col-md-8 offset-md-1'>
       <h2>Books</h2>
       <%= render 'books/index',books: @books %>
-
-          <p><%= link_to "#{book.book_comments.count} コメント", book_path(book.id) %></p>
-
     </div>
   </div>
 </div>
