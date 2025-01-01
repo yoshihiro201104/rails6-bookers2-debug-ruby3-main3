@@ -13,7 +13,6 @@ class User < ApplicationRecord
   # 被フォロー関係を通じて参照→自分をフォローしている人
   has_many :followers, through: :reverse_of_relationships, source: :follower
   
-  asd
   # 自分がフォローする（与フォロー）側の関係性
   has_many :relationships, class_name: "Relationship", foreign_key: "follower_id", dependent: :destroy
   # 与フォロー関係を通じて参照→自分がフォローしている人
