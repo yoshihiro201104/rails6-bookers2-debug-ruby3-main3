@@ -1,0 +1,24 @@
+<div>
+  <h3>7日分の投稿数</h3>
+</div>
+<table class='table table-bordered'>
+  <% day_range = (0..6) %>
+  <thead>
+    <tr>
+    <% day_range.reverse_each do |n| %>
+      <% if n == 0 %>
+        <th>今日</th>
+      <% else %>
+        <th><%= n %>日前</th>
+      <% end %>
+    <% end %>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+    <% day_range.reverse_each do |n| %>
+      <td><%= books.created_day(n).count %></td>
+    <% end %>
+    </tr>
+  </tbody>
+</table>
